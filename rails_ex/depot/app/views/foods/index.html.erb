@@ -1,0 +1,30 @@
+<h1>商品リスト</h1>
+
+<table border="1" width="100%">
+  <tr>
+    <th width="12%">商品名</th>
+    <th width="20%">商品紹介</th>
+    <th wigth="20%">商品図像</th>
+	<th wigth="12%">商品価額</th>
+	<th wigth="12%">商品詳細</th>
+    <th wigth="12%">商品編集</th>
+    <th wigth="12%">商品削除</th>
+	
+  </tr>
+
+<% for food in @foods %>
+  <tr>
+    <td><%=h food.title %></td>
+    <td><%=h food.description %></td>
+    <td><a href="<%=h food.image_url %>"><%=h food.image_url %></a></td>
+	<td><%=h food.price %></td>
+    <td><%= link_to '詳細', food %></td>
+    <td><%= link_to '編集', edit_food_path(food) %></td>
+    <td><%= link_to '削除', food, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '商品添加', new_food_path %>

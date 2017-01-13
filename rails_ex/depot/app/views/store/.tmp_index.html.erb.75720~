@@ -1,0 +1,13 @@
+<h1>商品リスト</h1>
+<div>
+	<% for food in @foods -%>
+	<h3>商品名     : <%=h food.title %></h5>
+	<h5>商品図像: <%= image_tag(food.image_url) %></h5>
+	<h5>商品紹介: <%=h food.description %></h5>
+	
+	<h5>商品価額: <%= number_to_currency(food.price) %></h5>
+	<div id="cartbutton">
+	<%= button_to 'Add to Cart',:action => 'add_to_cart',:id=>food %>
+	</div>
+	<% end %>
+</div>

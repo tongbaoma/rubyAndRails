@@ -1,0 +1,24 @@
+<h1>ユーザ情報編集</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <b>名前:</b><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+     <b>パスワード:</b><br />
+    <%= f.text_field :hashed_password %>
+  </p>
+  <p>
+     <b>Salt:</b><br />
+    <%= f.text_field :salt %>
+  </p>
+  <p>
+    <%= f.submit "更新" %>
+  </p>
+<% end %>
+
+<%= link_to '明細', @user %> |
+<%= link_to '戻る', users_path %>

@@ -1,0 +1,22 @@
+１．指定ファイルから情報をHashに読込む
+
+２．HashをArrayにする
+
+３．Arrayにレコードをいくつか追加する
+
+４．Arrayの重複レコードを除く
+
+５．Arrayを"name"の降順でソートする
+
+６．"age"の合計を取得する
+(eachメソッドを使用)
+
+７．"score"の合計を取得する
+(injectメソッドを使用)
+
+８．Arrayからsexがmaleのレコードを除く
+(select)
+
+※要求：
+１ 機能はmodule::class内に作成する
+２ １－８の結果をstdoutputに出力する

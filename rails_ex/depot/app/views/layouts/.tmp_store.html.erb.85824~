@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Pragprog Foods Ibkube Store</title>
+  <%= stylesheet_link_tag 'depot' %>
+</head>
+<body id="store">
+<div id="columns">	
+    <div id="side">
+    	<% if @cart %>
+          <% hidden_div_if(@cart.items.empty?, :id => "cart") do%>
+    		<%= render(:partial => "cart",:object=>@cart)%>
+		  <%end%>
+		<%end%>
+
+		<br/>
+
+		<a href="http://localhost:3001/store/index">商品リスト</a><br/>
+		
+		<% if session[:user_id]%>
+		   <br/>
+		   <%= link_to 'Orders',:controller => 'store',:action => 'order_index'%><br/>
+		   <%= link_to 'foods',:controller => 'foods' %><br/>
+		   <%= link_to 'Users',:controller => 'users' %><br/>
+		   <br/>
+		   <%= link_to 'Logout',:controller => 'admin', :action => 'logout' %><br/>
+		<%end%>
+    </div>
+	
+	
+     <div id="main">
+     	<% if flash[:notice]-%>
+		<div id="notice">
+			<%= flash[:notice]%>
+		</div>
+		<% end -%>
+     	<%= yield :layout %>
+     </div>
+ </div>
+</body>
+</html>

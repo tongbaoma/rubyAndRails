@@ -1,0 +1,25 @@
+<h1>ユーザリスト</h1>
+
+<table border="1" width="800">
+  <tr>
+  	<th>ID</th>
+    <th>名前</th>
+    <th>アドレス</th>
+    <th>メール</th>
+	<th>方式</th>
+    <th>削除</th>
+  </tr>
+
+<% for order in @orders %>
+  <tr>
+  	<td><%=h order.id %></td>
+	<td><%=h order.name %></td>
+	<td><%=h order.address %></td>
+	<td><%=h order.email %></td>
+	<td><%=h order.pay_type %></td>
+	<td class="action"><%=link_to image_tag('icon_edit.gif',:alt=>'編集', :width=>22, :height=>31), :action  => :lineitem_index, :id => order %>
+  </tr>
+<% end %>
+</table>
+
+<br />

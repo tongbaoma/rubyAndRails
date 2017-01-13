@@ -1,0 +1,23 @@
+
+<div class="depot-from">
+	<fieldset>
+		<legend>Welcome</legend>
+		</br>
+        </br>
+		<div>
+		   It's <%= Time.now %>.		
+		</div>
+	    <div>
+		  We have <%= pluralize(@total_orders,"order")%>.		
+		</div>
+		</br>
+        </br>
+	</fieldset>
+</div>
+
+
+</br>
+</br>
+</br>
+</br>
+</br>

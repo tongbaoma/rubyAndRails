@@ -1,0 +1,26 @@
+<h1>Order明細</h1>
+
+<table border="1" width="100%">
+  <tr>
+    <th width="20%">ID</th>
+    <th width="20%">Food_ID</th>
+    <th wigth="20%">Order_ID</th>
+	<th wigth="20%">数量</th>
+	<th wigth="20%">合計金額</th>	
+  </tr>
+
+<% for lineitem in @line_items %>
+  <tr>
+    <td><%=h lineitem.id %></td>
+    <td><%=h lineitem.food_id %></td>
+	<td><%=h lineitem.order_id %></td>
+    <td><%=h lineitem.quantity %></td>
+	<td><%=h lineitem.total_price %></td>
+  </tr>
+<% end %>
+
+</table>
+</br>
+
+
+<%= link_to '戻る',:controller => 'store',:action => 'order_index'%><br/>

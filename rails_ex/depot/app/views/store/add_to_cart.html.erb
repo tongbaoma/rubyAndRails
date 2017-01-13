@@ -1,0 +1,26 @@
+
+<table>
+	<!--
+	<% for item in @cart.items%>
+	<tr>
+	  <td><%=h item.quantity%> &times;</td>
+	  <td><%=h item.title%></td>
+	  <td></td>
+	  <td><%= number_to_currency(item.price)%></td>
+    </tr>
+	<% end %>
+	-->
+	<%= render(:partial => "cart_item",:collection => @cart.items)%>
+	
+    <tr class="total_line">
+      <td></td>
+	  <td colspan="2">Total</td>
+	  <td class="total_cell"><%= number_to_currency(@cart.total_price)%></td>
+    </tr>
+ <tr>
+ 	<td><%= button_to '戻る',:action=>'index' %></td>
+	<td><%= button_to 'Empty Cart',:action=>'empty_cart' %></td>
+ </tr>
+</table>
+
+

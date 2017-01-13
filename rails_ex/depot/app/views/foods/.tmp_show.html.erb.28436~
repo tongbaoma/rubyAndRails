@@ -1,0 +1,23 @@
+<p>
+  <b>title:</b>
+  <%=h @food.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @food.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%=h @food.image_url %>
+</p>
+
+<p>
+  <b>price:</b>
+  <%=h @food.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_food_path(@food) %> |
+<%= link_to 'Back', foods_path %>

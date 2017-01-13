@@ -1,0 +1,19 @@
+<h1>ユーザ明細</h1>
+<p>
+  <b>名前:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>パスワード:</b>
+  <%=h @user.hashed_password %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%=h @user.salt %>
+</p>
+
+
+<%= link_to '編集', edit_user_path(@user) %> |
+<%= link_to '戻る', users_path %>

@@ -1,0 +1,23 @@
+<p>
+  <b>商品名:</b>
+  <%=h @food.title %>
+</p>
+
+<p>
+  <b>商品紹介:</b>
+  <%=h @food.description %>
+</p>
+
+<p>
+  <b>商品図像url:</b>
+  <%=h @food.image_url %>
+</p>
+
+<p>
+  <b>商品価額:</b>
+  <%=h @food.price %>
+</p>
+
+
+<%= link_to '編集', edit_food_path(@food) %> |
+<%= link_to '戻る', foods_path %>

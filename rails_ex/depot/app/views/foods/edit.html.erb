@@ -1,0 +1,28 @@
+<h1>商品編集</h1>
+
+<% form_for(@food) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <b>商品名:</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <b>商品紹介:</b>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <b>商品図像:</b>
+    <%= f.text_field :image_url %>
+  </p>
+   <p>
+    <b>商品価額:</b>
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.submit "更新" %>
+  </p>
+<% end %>
+
+<%= link_to '詳細', @food %> |
+<%= link_to '戻る', foods_path %>

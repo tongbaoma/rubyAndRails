@@ -1,0 +1,21 @@
+class AddTestData < ActiveRecord::Migration
+  def self.up
+    food.delete_all
+    food.create(:title => 'Pragmatic Version Control',
+                :description => 
+                %{<p>
+                  This book is a recipe-based approach to useing Subversion that will
+                  get you uo an runing quickly -- and correctly. All projects need 
+                  version control:it;s a fiybdatuibak oriece of any project's
+                  infrastructure. Yet half of all project teams in the U.S. don't use
+                  up experiencing time-consuming problems.
+                  </p>},
+                 :image_url => '/images/niurou.jpg',
+                 :price => 28.50
+                )
+  end
+
+  def self.down
+    food.delete_all
+  end
+end
